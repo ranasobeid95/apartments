@@ -1,0 +1,54 @@
+{
+  "name": "apartments",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rimraf dist && npx tsc",
+    "prestart": "npm run build",
+    "start": "node dist/index.js",
+    "preserve": "npm run build",
+    "serve": "concurrently \"npx tsc -w\"  \"nodemon dist/index.js\"",
+    "kill-port": "fuser -k 8000/tcp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranasobeid95/apartments.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ranasobeid95/apartments/issues"
+  },
+  "homepage": "https://github.com/ranasobeid95/apartments#readme",
+  "dependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/body-parser": "^1.19.5",
+    "@types/compression": "^1.7.5",
+    "@types/cookie-parser": "^1.4.7",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.12.8",
+    "@types/validator": "^13.11.9",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "compression": "^1.7.4",
+    "concurrently": "^8.2.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.3",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.5",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^8.2.0",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2"
+  }
+}
