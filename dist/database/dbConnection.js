@@ -10,6 +10,8 @@ const dbURL = process.env.DB_CONNECTION || "";
 const connectOptions = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    tls: true, // Enable TLS/SSL
+    tlsAllowInvalidCertificates: false,
 };
 mongoose_1.default
     .connect(dbURL, connectOptions)
