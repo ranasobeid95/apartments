@@ -4,6 +4,7 @@ export interface IApartments extends Document {
   title: string;
   description: string;
   price: string;
+  location: string;
   images: string[];
 }
 
@@ -17,6 +18,10 @@ const apartmentsSchema = new Schema<IApartments>({
     required: true,
   },
   price: {
+    type: String,
+    required: true,
+  },
+  location: {
     type: String,
     required: true,
   },

@@ -8,6 +8,7 @@ router.post("/", async (req: express.Request, res: express.Response) => {
   const { title, description, price, images } = req.body as {
     title: string;
     description: string;
+    location: string;
     price: String;
     images: [String];
   };
