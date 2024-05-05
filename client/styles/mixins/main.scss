@@ -1,0 +1,86 @@
+@mixin flexCenter($gap: 0, $direction: "row") {
+  display: flex !important;
+  @if $direction != "row" {
+    flex-direction: $direction;
+  }
+  @if $gap != 0 {
+    gap: $gap;
+  }
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex(
+  $justifyContent: flex-start,
+  $alignItems: flex-start,
+  $direction: row,
+  $gap: 0,
+  $wrap: nowrap
+) {
+  display: flex;
+  @if $direction != "row" {
+    flex-direction: $direction;
+  }
+
+  flex-wrap: $wrap;
+  @if $gap != 0 {
+    gap: $gap;
+  }
+  align-items: $justifyContent;
+  justify-content: $alignItems;
+}
+
+@mixin styleScroll() {
+  scrollbar-width: thin;
+  scrollbar-color: getColor(Gray-100), getColor(Gray-400);
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 40px;
+    background-color: getColor(Gray-100);
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: getColor(Gray-400);
+    border-radius: 2px;
+  }
+}
+
+// MEDIA QUERY MANAGER
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == mobile-small {
+    @media (max-width: 450px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == small-desktop {
+    @media (min-width: 1280px) {
+      @content;
+    }
+  }
+  @if $breakpoint == medium-desktop {
+    @media (min-width: 1600px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == large-desktop {
+    @media (min-width: 2048px) {
+      @content;
+    }
+  }
+}

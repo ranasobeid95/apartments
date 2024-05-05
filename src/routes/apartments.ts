@@ -5,7 +5,7 @@ const router: Router = express.Router();
 
 // Submits a apartment
 router.post("/", async (req: express.Request, res: express.Response) => {
-  const { title, description, price, images } = req.body as {
+  const { title, description, price, location, images } = req.body as {
     title: string;
     description: string;
     location: string;
@@ -19,6 +19,7 @@ router.post("/", async (req: express.Request, res: express.Response) => {
       description,
       price,
       images,
+      location,
     });
     console.log("res.json(savedApartment) :>> ", res.json(savedApartment));
     res.json(savedApartment);

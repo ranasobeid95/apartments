@@ -8,7 +8,7 @@ const apartments_1 = __importDefault(require("../database/models/apartments")); 
 const router = express_1.default.Router();
 // Submits a apartment
 router.post("/", async (req, res) => {
-    const { title, description, price, images } = req.body;
+    const { title, description, price, location, images } = req.body;
     console.log("req.body :>> ", req.body);
     try {
         const savedApartment = await apartments_1.default.create({
@@ -16,6 +16,7 @@ router.post("/", async (req, res) => {
             description,
             price,
             images,
+            location,
         });
         console.log("res.json(savedApartment) :>> ", res.json(savedApartment));
         res.json(savedApartment);
