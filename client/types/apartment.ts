@@ -5,4 +5,5 @@ export interface IApartments {
   price: string;
   location: string;
   images: string[];
+  unClickable?: boolean;
 }

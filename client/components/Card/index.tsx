@@ -12,12 +12,13 @@ export default function Card({
   price,
   location,
   images,
+  unClickable = false,
   _id,
 }: IApartments) {
   return (
     <Link
       href={`${ROUTES.APARTMENTS}/${_id}`}
-      className={`${styles.cardContainer}`}
+      className={`${styles.cardContainer} ${unClickable ? styles.disable : ""}`}
     >
       <Image
         className={`${styles.imageStyle}`}

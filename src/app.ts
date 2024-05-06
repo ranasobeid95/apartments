@@ -11,16 +11,14 @@ import { clientError, serverError } from "./controllers/errorHandle";
 dotenv.config();
 
 const app: Express = express();
-const corsOptions = {
-  origin: "http://localhost:3000",
-  methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type"],
-  optionsSuccessStatus: 200,
-  credentials: true,
-};
 
 // Apply middleware
-app.use(cors(corsOptions));
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000",
+//     credentials: true, // Allow cookies to be sent cross-origin
+//   })
+// );
 app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());

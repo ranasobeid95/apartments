@@ -27,3 +27,14 @@ export async function addApartment(body: any): Promise<any> {
   }
   return resp;
 }
+
+export async function getApartmentByID(id: string): Promise<any> {
+  const resp: any = await http({
+    url: `${ROUTES.APARTMENTS}/${id}`,
+    method: "GET",
+  });
+  if (resp.status === 1 && resp.data) {
+    return resp;
+  }
+  return resp;
+}
