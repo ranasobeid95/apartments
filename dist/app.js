@@ -14,8 +14,15 @@ const routes_1 = __importDefault(require("./routes"));
 const errorHandle_1 = require("./controllers/errorHandle");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
+const corsOptions = {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
+    optionsSuccessStatus: 200,
+    credentials: true,
+};
 // Apply middleware
-app.use((0, cors_1.default)({ credentials: true }));
+app.use((0, cors_1.default)(corsOptions));
 app.use((0, compression_1.default)());
 app.use((0, cookie_parser_1.default)());
 app.use(body_parser_1.default.json());

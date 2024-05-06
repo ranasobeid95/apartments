@@ -25,7 +25,9 @@ export async function http({
       },
       body: body && JSON.stringify(body),
       cache: "no-store",
+      credentials: "include",
     });
+    console.log("resp :>> ", resp);
     if (json && resp.ok && resp.status != 204) {
       const data = await resp.json();
       return transformedResp(null, data);

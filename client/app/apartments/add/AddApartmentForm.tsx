@@ -70,7 +70,7 @@ export default function AddApartmentForm({}: {}) {
     setSubmitting(false);
 
     if (resp && resp.status === 0) {
-      resetForm();
+      // resetForm();
     } else {
       push(ROUTES.Home);
     }
