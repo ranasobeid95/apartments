@@ -19,7 +19,6 @@ export default function ApartmentDetailsPage({
   useEffect(() => {
     async function getApartment() {
       const { status, data } = await getApartmentByID(apartmentId);
-      console.log("data :>> ", data);
       if (status === 1) {
         setIsLoading(false);
         setApartment(data);
