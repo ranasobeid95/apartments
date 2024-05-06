@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const compression_1 = __importDefault(require("compression"));
 const body_parser_1 = __importDefault(require("body-parser"));
+const cors_1 = __importDefault(require("cors"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const dbConnection_1 = __importDefault(require("./database/dbConnection"));
 const routes_1 = __importDefault(require("./routes"));
@@ -14,12 +15,7 @@ const errorHandle_1 = require("./controllers/errorHandle");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 // Apply middleware
-// app.use(
-//   cors({
-//     origin: "http://localhost:3000",
-//     credentials: true, // Allow cookies to be sent cross-origin
-//   })
-// );
+app.use((0, cors_1.default)());
 app.use((0, compression_1.default)());
 app.use((0, cookie_parser_1.default)());
 app.use(body_parser_1.default.json());
