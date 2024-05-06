@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./style.module.scss";
+import Image from "next/image";
 
 interface CarouselProps {
   images: string[];
@@ -25,7 +26,7 @@ export default function Carousel({ images }: CarouselProps) {
       <button onClick={goToPrevious} className={styles.navButton}>
         Previous
       </button>
-      <img
+      <Image
         src={images[currentImageIndex]}
         className={styles.image}
         alt='Carousel Item'
