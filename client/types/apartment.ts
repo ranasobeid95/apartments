@@ -6,4 +6,5 @@ export interface IApartments {
   location: string;
   images: string[];
   unClickable?: boolean;
+  showSlider?: boolean;
 }

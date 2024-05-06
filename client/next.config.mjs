@@ -3,7 +3,7 @@
 const nextConfig = {
   env: {},
   images: {
-    domains: ["www.aveliving.com"], // Add your domain here
+    domains: ["www.aveliving.com", "tjh.com"], // Add your domain here
   },
 };
 

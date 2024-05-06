@@ -64,9 +64,7 @@ export default function AddApartmentForm({}: {}) {
 
     const body = { ...values, images };
 
-    const resp = await addApartment({
-      body,
-    });
+    const resp = await addApartment(body);
     setSubmitting(false);
 
     if (resp && resp.status === 0) {

@@ -5,6 +5,8 @@ import { IApartments } from "@/types/apartment";
 import { getApartmentByID } from "@/services/apartment";
 import Spinner from "@/components/LoadingSpinner";
 import Card from "@/components/Card";
+import Link from "next/link";
+import { ROUTES } from "@/constants/routes";
 
 export default function ApartmentDetailsPage({
   params: { apartmentId },
@@ -31,6 +33,9 @@ export default function ApartmentDetailsPage({
         <Spinner centered={true} size='40px' borderThickness='4px' />
       ) : (
         <div className={styles.apartmentsListStyle}>
+          <Link href={ROUTES.Home} className={styles.backButton}>
+            {"<"}
+          </Link>
           {apartment && (
             <Card
               unClickable={true}
@@ -40,6 +45,7 @@ export default function ApartmentDetailsPage({
               price={apartment.price}
               location={apartment.location}
               images={apartment.images}
+              showSlider={true}
             />
           )}
         </div>

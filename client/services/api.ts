@@ -17,6 +17,7 @@ export async function http({
   headers,
 }: HttpClientParams): Promise<any> {
   try {
+    console.log("object :>> ", JSON.stringify(body));
     const resp = await fetch(`${APIS.PRODUCTION_URL}${url}`, {
       method: method || "GET",
       headers: {

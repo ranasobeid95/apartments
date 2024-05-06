@@ -15,7 +15,7 @@ export default function ApartmentsPage() {
 
       if (status === 1) {
         setIsLoading(false);
-        setApartments(data);
+        setApartments(data.reverse());
       }
     }
     getApartmentsList();

@@ -16,11 +16,10 @@ export async function getAllApartments(): Promise<any> {
 }
 
 export async function addApartment(body: any): Promise<any> {
-  const { title, price, description, images, location } = body;
   const resp: any = await http({
     url: ROUTES.APARTMENTS,
     method: "POST",
-    body: { title, price, description, images, location },
+    body,
   });
   if (resp.status === 1 && resp.data) {
     return resp;
