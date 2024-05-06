@@ -8,7 +8,6 @@ export async function getAllApartments(): Promise<any> {
     method: "GET",
   });
 
-  console.log("resp :>> ", resp);
   if (resp.status === 1 && resp.data) {
     return resp;
   }

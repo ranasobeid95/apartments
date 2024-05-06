@@ -12,7 +12,6 @@ router.post("/", async (req: express.Request, res: express.Response) => {
     price: String;
     images: [String];
   };
-  console.log("req.body :>> ", req.body);
   try {
     const savedApartment = await Apartments.create({
       title,
@@ -21,7 +20,6 @@ router.post("/", async (req: express.Request, res: express.Response) => {
       images,
       location,
     });
-    console.log("res.json(savedApartment) :>> ", res.json(savedApartment));
     res.json(savedApartment);
   } catch (error) {
     res.status(500).json({ message: "Failed to create apartment", error });
@@ -30,7 +28,6 @@ router.post("/", async (req: express.Request, res: express.Response) => {
 
 // Get back all the apartments
 router.get("/", async (req: express.Request, res: express.Response) => {
-  console.log("111 :>> ", 111);
   try {
     const apartments = await Apartments.find();
     res.json(apartments);

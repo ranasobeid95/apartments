@@ -17,7 +17,6 @@ export async function http({
   headers,
 }: HttpClientParams): Promise<any> {
   try {
-    console.log("object :>> ", JSON.stringify(body));
     const resp = await fetch(`${APIS.PRODUCTION_URL}${url}`, {
       method: method || "GET",
       headers: {
@@ -28,7 +27,6 @@ export async function http({
       cache: "no-store",
       credentials: "include",
     });
-    console.log("resp :>> ", resp);
     if (json && resp.ok && resp.status != 204) {
       const data = await resp.json();
       return transformedResp(null, data);
