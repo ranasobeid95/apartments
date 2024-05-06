@@ -15,6 +15,7 @@ const app: Express = express();
 // Apply middleware
 app.use(
   cors({
+    origin: "http://localhost:3000",
     credentials: true, // Allow cookies to be sent cross-origin
   })
 );
