@@ -1,5 +1,6 @@
 import { ROUTES } from "@/constants/routes";
 import { http } from "./api";
+import { IApartments } from "@/types/apartment";
 
 export async function getAllApartments(): Promise<any> {
   const resp: any = await http({
@@ -8,6 +9,19 @@ export async function getAllApartments(): Promise<any> {
   });
 
   console.log("resp :>> ", resp);
+  if (resp.status === 1 && resp.data) {
+    return resp;
+  }
+  return resp;
+}
+
+export async function addApartment(body: any): Promise<any> {
+  console.log("body :>> ", body);
+  const resp: any = await http({
+    url: ROUTES.APARTMENTS,
+    method: "POST",
+    body,
+  });
   if (resp.status === 1 && resp.data) {
     return resp;
   }

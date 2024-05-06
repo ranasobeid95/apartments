@@ -1,3 +1,5 @@
+@use "@/styles/variables" as *;
+
 @mixin flexCenter($gap: 0, $direction: "row") {
   display: flex !important;
   @if $direction != "row" {
@@ -32,20 +34,83 @@
 
 @mixin styleScroll() {
   scrollbar-width: thin;
-  scrollbar-color: getColor(Gray-100), getColor(Gray-400);
+  scrollbar-color: #323232, #909090;
 
   &::-webkit-scrollbar {
     width: 4px;
     height: 40px;
-    background-color: getColor(Gray-100);
+    background-color: #323232;
     border-radius: 2px;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: getColor(Gray-400);
+    background-color: #909090;
     border-radius: 2px;
   }
 }
 
+@mixin invalidInput {
+  border-bottom: 1px solid #f65843;
+}
+
+@mixin stylePlaceholder($color: $placeholder-color, $size: $placeholder-size) {
+  font-family: inherit;
+  ::-webkit-input-placeholder {
+    color: $color;
+    font-size: $size;
+  }
+
+  :-ms-input-placeholder {
+    color: $color;
+    font-size: $size;
+  }
+
+  ::placeholder {
+    color: $color;
+    font-size: $size;
+  }
+}
+
+@mixin inputLabelStyle {
+  line-height: 10px !important;
+  display: inline-block;
+  color: #909090;
+  margin: 0;
+  margin-bottom: 4px;
+  // padding-top: 4px;
+}
+
+@mixin inputStyle {
+  //style input
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  caret-color: #e1f5ff;
+  font-size: $input-text-size;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  color: #ebebeb;
+  flex: 1;
+  &:focus-within,
+  &:focus-visible {
+    outline: none;
+  }
+  @include stylePlaceholder();
+}
+
+@mixin styleInputContainer($bg: #262626) {
+  @include flex(center, null, null, 4px);
+  height: $input-height;
+  border-radius: 8px;
+  background: $bg;
+  transition: $border-transition;
+  padding: 12px 8px;
+
+  &:focus-within:not(.invalid) {
+    border-bottom: 1px solid #00b5ff;
+  }
+}
 // MEDIA QUERY MANAGER
 
 @mixin respond($breakpoint) {

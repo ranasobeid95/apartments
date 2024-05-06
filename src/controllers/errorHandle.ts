@@ -24,22 +24,6 @@ export const errorHandle = (
 ): ErrorHandleResult => {
   const errors: ErrorHandleResult = {};
 
-  // Handle duplicate email error (MongoDB error code 11000)
-  if (error.code === 11000) {
-    errors.email = "That email is already registered";
-    return errors;
-  }
-
-  // Handle incorrect email error
-  if (error.message === "incorrect email") {
-    errors.email = "That email is not registered";
-  }
-
-  // Handle incorrect password error
-  if (error.message === "incorrect password") {
-    errors.password = "That password is incorrect";
-  }
-
   // Handle Mongoose validation errors
   if (error.message.includes("validation failed")) {
     if (error.errors) {

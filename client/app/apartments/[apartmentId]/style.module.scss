@@ -1,2 +1,7 @@
-.apartmentContainerStyle {
+@use "@/styles/mixins/main" as *;
+
+.apartmentDetailsContainerStyle {
+  @include respond(mobile) {
+    padding: 60px 40px;
+  }
 }

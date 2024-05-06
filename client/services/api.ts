@@ -21,8 +21,7 @@ export async function http({
       method: method || "GET",
       headers: {
         "Content-Type": "application/json",
-        Accept: "text/plain",
-        ...headers,
+        Accept: "application/json",
       },
       body: body && JSON.stringify(body),
       cache: "no-store",

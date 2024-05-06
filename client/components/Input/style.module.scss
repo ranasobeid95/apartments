@@ -1,0 +1,37 @@
+@use "@/styles/mixins/main" as *;
+
+.inputContainer {
+  @include flex(flex-start, flex-start, column, 4px);
+  align-self: stretch;
+}
+
+.formControl {
+  @include styleInputContainer();
+  color: #d1d1d1;
+
+  &.disabled {
+    background-color: #3f3f3f;
+
+    > * {
+      color: #909090;
+    }
+  }
+}
+
+.generalInput {
+  @include inputStyle;
+
+  &:read-only {
+    color: #909090;
+    cursor: pointer;
+    pointer-events: none;
+  }
+}
+
+.inputLabel {
+  @include inputLabelStyle;
+}
+
+div.invalid {
+  @include invalidInput;
+}
