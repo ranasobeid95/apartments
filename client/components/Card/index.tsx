@@ -23,6 +23,7 @@ export default function Card({
   const [imgs, setImgs] = useState<{ url: string }[]>();
   useEffect(() => {
     let newImgs: { url: string }[];
+    console.log("images :>> ", images);
     if (images && images.length > 0) {
       newImgs = images.map((img) => {
         return { url: img };
