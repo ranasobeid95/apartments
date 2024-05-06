@@ -15,7 +15,7 @@ const app: Express = express();
 // Apply middleware
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://apartments-ga5r.vercel.app/"],
+    origin: "https://apartments-ga5r.vercel.app/",
     credentials: true, // Allow cookies to be sent cross-origin
   })
 );
