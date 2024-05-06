@@ -30,7 +30,7 @@ export default function Card({
       });
       setImgs(newImgs);
     }
-  }, []);
+  }, [images]);
   return (
     <Link
       href={`${ROUTES.APARTMENTS}/${_id}`}

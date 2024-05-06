@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState } from "react";
 
 export default function ImageUploader() {
@@ -18,7 +19,7 @@ export default function ImageUploader() {
       {selectedImage && (
         <div>
           <h2>Selected Image:</h2>
-          <img
+          <Image
             src={selectedImage}
             alt='Selected'
             style={{ maxWidth: "100%" }}

@@ -38,6 +38,7 @@ export default function ApartmentsPage() {
                   price={price}
                   location={location}
                   images={images}
+                  key={_id}
                 />
               );
             })}

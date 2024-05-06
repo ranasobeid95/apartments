@@ -25,7 +25,7 @@ export default function ApartmentDetailsPage({
       }
     }
     getApartment();
-  }, []);
+  }, [apartmentId]);
   return (
     <div className={styles.apartmentDetailsContainerStyle}>
       {isLoading ? (
