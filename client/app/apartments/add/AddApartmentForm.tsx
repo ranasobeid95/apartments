@@ -1,12 +1,5 @@
 "use client";
 
-// import { Button } from "@/components/Button";
-// import {
-//   BUTTON_ROLES,
-//   BUTTON_SIZES,
-//   BUTTON_STATES,
-//   BUTTON_TYPES,
-// } from "@/components/Button/type";
 import Input from "@/components/Input";
 import { FormikHelpers, useFormik } from "formik";
 import styles from "./style.module.scss";
@@ -68,7 +61,7 @@ export default function AddApartmentForm({}: {}) {
     setSubmitting(false);
 
     if (resp && resp.status === 0) {
-      // resetForm();
+      resetForm();
     } else {
       push(ROUTES.Home);
     }
