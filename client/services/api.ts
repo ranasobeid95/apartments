@@ -21,7 +21,7 @@ export async function http({
       method: method || "GET",
       headers: {
         "Content-Type": "application/json",
-        Origin: "https://apartments-ga5r.vercel.app/",
+        Origin: "https://apartments-ga5r-ranasobeid95s-projects.vercel.app/",
         Accept: "application/json",
       },
       body: body && JSON.stringify(body),
