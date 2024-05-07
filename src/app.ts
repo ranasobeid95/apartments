@@ -12,13 +12,26 @@ dotenv.config();
 
 const app: Express = express();
 
-// Apply middleware
+const allowedOrigins: string[] = [
+  "http://localhost:3000",
+  "https://apartments-ga5r.vercel.app",
+];
+
+// Configure CORS middleware
 app.use(
   cors({
-    origin: "https://apartments-ga5r.vercel.app/",
-    credentials: true, // Allow cookies to be sent cross-origin
+    origin: (origin, callback) => {
+      if (allowedOrigins.includes(origin!)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true, // Allow credentials like cookies to be included
   })
 );
+// Apply middleware
+
 app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());

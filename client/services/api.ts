@@ -21,6 +21,7 @@ export async function http({
       method: method || "GET",
       headers: {
         "Content-Type": "application/json",
+        Origin: "http://localhost:3000",
         Accept: "application/json",
       },
       body: body && JSON.stringify(body),
